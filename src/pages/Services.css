@@ -1,0 +1,333 @@
+.services-page {
+  background: white;
+  min-height: 100vh;
+}
+
+/* Banner Styles */
+.page-banner {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.banner-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.banner-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Services Content */
+.services-wrapper {
+  max-width: 1200px;
+  margin: -80px auto 80px;
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 3;
+  border: 1px solid #F0EAE0;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.services-header h2 {
+  font-size: 1.8rem;
+  color: #B8860B;
+  margin-bottom: 0.5rem;
+}
+
+.services-header p {
+  font-size: 0.9rem;
+  color: #5A5A5A;
+}
+
+.services-highlights {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.services-highlights span {
+  font-size: 0.85rem;
+  color: #C9A03D;
+  font-weight: 500;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Service Item - Card Style */
+.service-item {
+  background: #FEFAF2;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #F0EAE0;
+  cursor: pointer;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: #C9A03D;
+}
+
+/* Image Container with Overlay */
+.service-image-container {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.service-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-item:hover .service-image-container img {
+  transform: scale(1.05);
+}
+
+/* Overlay on Hover */
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(184, 134, 11, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: white;
+  gap: 8px;
+}
+
+.service-overlay svg {
+  font-size: 1.8rem;
+}
+
+.service-overlay p {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.service-item:hover .service-overlay {
+  opacity: 1;
+}
+
+/* Service Title - Always Visible */
+.service-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #B8860B;
+  text-align: center;
+  padding: 12px;
+  margin: 0;
+  background: white;
+  border-top: 1px solid #F0EAE0;
+}
+
+/* Simple Modal Styles */
+.simple-service-modal {
+  max-width: 600px;
+  background: white;
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.simple-service-modal img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.simple-service-modal h3 {
+  color: #B8860B;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.service-description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-banner {
+    height: 300px;
+  }
+  
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+  
+  .banner-content p {
+    font-size: 0.9rem;
+  }
+  
+  .services-wrapper {
+    margin: -40px 1rem 60px;
+    padding: 1.5rem;
+  }
+  
+  .services-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .services-highlights {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* Simple Modal Mobile Styles */
+  .simple-service-modal {
+    max-width: 95%;
+  }
+  
+  .simple-service-modal img {
+    max-height: 250px;
+  }
+  
+  .simple-service-modal h3 {
+    font-size: 1.3rem;
+  }
+}
+  
+  .service-overlay svg {
+    font-size: 1.5rem;
+  }
+  
+  .service-overlay p {
+    font-size: 0.75rem;
+  }
+  
+  .service-title {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  
+  .modal-content h4 {
+    font-size: 0.9rem;
+  }
+  
+  .modal-close {
+    font-size: 1.5rem;
+    top: 5px;
+    right: 15px;
+  }
+
+@media (max-width: 480px) {
+  .services-wrapper {
+    padding: 1rem;
+  }
+  
+  .services-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .services-header p {
+    font-size: 0.75rem;
+  }
+  
+  .services-highlights span {
+    font-size: 0.7rem;
+  }
+  
+  .service-title {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}
